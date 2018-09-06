@@ -7,6 +7,7 @@ import android.graphics.Paint;
 import android.graphics.Rect;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.view.View;
 
 public class Sample13GetTextBoundsView extends View {
@@ -37,17 +38,18 @@ public class Sample13GetTextBoundsView extends View {
 
         Rect textBounds = new Rect();
         paint2.getTextBounds(texts[0], 0, texts[0].length(), textBounds);
-        yOffsets[0] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[0] = -(textBounds.top + textBounds.bottom) / 2;//算出文字高度/2当做基线位置为了把文字绘制在矩形区域的中间线位置（把文字的一半高度当做基线位置所以加上基线高度让文字沉下去一半）
+        Log.e("TAG", textBounds.top + "=======>" + textBounds.bottom+"==========>"+textBounds.toString());
         paint2.getTextBounds(texts[1], 0, texts[1].length(), textBounds);
-        yOffsets[1] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[1] = -(textBounds.top + textBounds.bottom) / 2;
         paint2.getTextBounds(texts[2], 0, texts[2].length(), textBounds);
-        yOffsets[2] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[2] = -(textBounds.top + textBounds.bottom) / 2;
         paint2.getTextBounds(texts[3], 0, texts[3].length(), textBounds);
-        yOffsets[3] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[3] = -(textBounds.top + textBounds.bottom) / 2;
         paint2.getTextBounds(texts[4], 0, texts[4].length(), textBounds);
-        yOffsets[4] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[4] = -(textBounds.top + textBounds.bottom) / 2;
         paint2.getTextBounds(texts[5], 0, texts[5].length(), textBounds);
-        yOffsets[5] = - (textBounds.top + textBounds.bottom) / 2;
+        yOffsets[5] = -(textBounds.top + textBounds.bottom) / 2;
     }
 
     @Override
